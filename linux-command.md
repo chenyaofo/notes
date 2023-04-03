@@ -93,3 +93,31 @@ find ./ -size 0 | xargs rm -f &
 find命令配合使用exec和xargs可以使用户对所匹配到的文件执行几乎所有的命令。
 
 参考：[【日常小记】linux中强大且常用命令：find](https://www.cnblogs.com/skynet/archive/2010/12/25/1916873.html)
+
+---
+
+## rclone 命令多线程复制
+
+```
+rclone copy source dest --progress --transfer=16 --multi-thread-streams=4
+```
+
+ - `--progress`或`-P`表示打印详细的上传/下载信息，包括进度，剩余时间等等。
+ - `--transfer`表示同时传输的文件的数量，默认是4。
+ - `--multi-thread-streams`表示下载文件时使用的线程数量，默认是4。
+
+## rclone 怎么使用S3存储
+
+修改配置文件`~/.config/rclone/rclone.conf`
+
+```
+[r2]
+type = s3
+provider = Cloudflare
+access_key_id = xxxxxxxx
+secret_access_key = xxxxxxxx
+endpoint = https://xxxxxxxx.r2.cloudflarestorage.com
+acl = private
+```
+
+然后即可愉快使用了`rclone tree r2:`，其它rclone命令同理。
