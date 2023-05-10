@@ -29,10 +29,8 @@ wget -O ~/clash/config.yaml https://sub.cm/xxxxxxx && docker restart clash
 ## 服务器上proxy的便捷使用
 
 ```
-hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
+proxyip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
 port=7890
-alias p="http_proxy=http://${hostip}:${port} https_proxy=http://${hostip}:${port} all_proxy=socks5://${hostip}:${port}"
-alias p5="http_proxy=socks5://${hostip}:${port} https_proxy=socks5://${hostip}:${port} all_proxy=socks5://${hostip}:${port}"
+alias p="http_proxy=http://${proxyip}:${port} https_proxy=http://${proxyip}:${port} all_proxy=http://${proxyip}:${port}"
 ```
 
-`curl`和`wget`和`git`命令使用`p`，`skopeo`命令使用`p5`
