@@ -32,5 +32,7 @@ wget -O ~/clash/config.yaml https://sub.cm/xxxxxxx && docker restart clash
 proxyip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
 port=7890
 alias p="http_proxy=http://${proxyip}:${port} https_proxy=http://${proxyip}:${port} all_proxy=http://${proxyip}:${port}"
+alias p5="http_proxy=socks5://${proxyip}:${port} https_proxy=socks5://${proxyip}:${port} all_proxy=socks5://${proxyip}:${port}"
+alias pq="proxychains4 -q"
 ```
 
