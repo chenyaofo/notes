@@ -208,7 +208,7 @@ torchvision==0.14.0
 
  - 安装CUDA
 
-检查可用版本，请到官方页码检查所有可用的版本，[nvidia帮助文档](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#conda-installation)提供了更多的信息
+检查可用版本，请到[官方页面](https://anaconda.org/nvidia/cuda)检查所有可用的版本，[nvidia帮助文档](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#conda-installation)提供了更多的信息
 
 ```
 mamba install -c "nvidia/label/cuda-11.8.0" cuda
