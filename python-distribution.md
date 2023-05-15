@@ -203,3 +203,92 @@ torchvision==0.14.0
 先正常构建wheel，然后使用`auditwheel`工具将二进制包转换为manylinux形式。`auditwheel`会将外部共享库复制到wheel里面， 并自动修改共享库的相关内容。构建例子可以参考[这里](https://github.com/pypa/python-manylinux-demo/blob/master/travis/build-wheels.sh)。
 
 参考：[Github - auditwheel](https://github.com/pypa/auditwheel)
+
+### 如何使用conda/mamba安装CUDA和GCC？
+
+ - 安装CUDA
+
+检查可用版本，请到官方页码检查所有可用的版本，[nvidia帮助文档](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#conda-installation)提供了更多的信息
+
+```
+mamba install -c "nvidia/label/cuda-11.8.0" cuda
+```
+
+这样安装得到的是完整的CUDA，和从官网下载得到的是一样的，安装好激活环境之后会自动设置`CUDA_HOME`和`CUDA_PATH`
+
+ - 安装GCC
+
+检查可用版本：
+
+```
+mamba search gcc
+```
+
+```
+# Name                       Version           Build  Channel
+gcc                            8.5.0      h143be6b_1  conda-forge
+gcc                            8.5.0     h143be6b_10  conda-forge
+gcc                            8.5.0      h143be6b_2  conda-forge
+gcc                            8.5.0      h143be6b_3  conda-forge
+gcc                            8.5.0      h143be6b_4  conda-forge
+gcc                            8.5.0      h143be6b_5  conda-forge
+gcc                            8.5.0      h143be6b_6  conda-forge
+gcc                            8.5.0      h143be6b_7  conda-forge
+gcc                            8.5.0      h143be6b_8  conda-forge
+gcc                            8.5.0      h143be6b_9  conda-forge
+gcc                            9.4.0      h192d537_1  conda-forge
+gcc                            9.4.0     h192d537_10  conda-forge
+gcc                            9.4.0      h192d537_2  conda-forge
+gcc                            9.4.0      h192d537_3  conda-forge
+gcc                            9.4.0      h192d537_4  conda-forge
+gcc                            9.4.0      h192d537_5  conda-forge
+gcc                            9.4.0      h192d537_6  conda-forge
+gcc                            9.4.0      h192d537_7  conda-forge
+gcc                            9.4.0      h192d537_8  conda-forge
+gcc                            9.4.0      h192d537_9  conda-forge
+gcc                            9.5.0     h1fea6ba_10  conda-forge
+gcc                            9.5.0     h1fea6ba_11  conda-forge
+gcc                            9.5.0     h1fea6ba_12  conda-forge
+gcc                            9.5.0     h1fea6ba_13  conda-forge
+gcc                           10.3.0      he2824d0_1  conda-forge
+gcc                           10.3.0     he2824d0_10  conda-forge
+gcc                           10.3.0      he2824d0_2  conda-forge
+gcc                           10.3.0      he2824d0_3  conda-forge
+gcc                           10.3.0      he2824d0_4  conda-forge
+gcc                           10.3.0      he2824d0_5  conda-forge
+gcc                           10.3.0      he2824d0_6  conda-forge
+gcc                           10.3.0      he2824d0_7  conda-forge
+gcc                           10.3.0      he2824d0_8  conda-forge
+gcc                           10.3.0      he2824d0_9  conda-forge
+gcc                           10.4.0     hb92f740_10  conda-forge
+gcc                           10.4.0     hb92f740_11  conda-forge
+gcc                           10.4.0     hb92f740_12  conda-forge
+gcc                           10.4.0     hb92f740_13  conda-forge
+gcc                           11.1.0      hee54495_1  conda-forge
+gcc                           11.2.0      h702ea55_1  conda-forge
+gcc                           11.2.0     h702ea55_10  conda-forge
+gcc                           11.2.0      h702ea55_2  conda-forge
+gcc                           11.2.0      h702ea55_3  conda-forge
+gcc                           11.2.0      h702ea55_4  conda-forge
+gcc                           11.2.0      h702ea55_5  conda-forge
+gcc                           11.2.0      h702ea55_6  conda-forge
+gcc                           11.2.0      h702ea55_7  conda-forge
+gcc                           11.2.0      h702ea55_8  conda-forge
+gcc                           11.2.0      h702ea55_9  conda-forge
+gcc                           11.3.0     h02d0930_10  conda-forge
+gcc                           11.3.0     h02d0930_11  conda-forge
+gcc                           11.3.0     h02d0930_12  conda-forge
+gcc                           11.3.0     h02d0930_13  conda-forge
+gcc                           12.1.0     h9ea6d83_10  conda-forge
+gcc                           12.2.0     h26027b1_11  conda-forge
+gcc                           12.2.0     h26027b1_12  conda-forge
+gcc                           12.2.0     h26027b1_13  conda-forge
+```
+
+选择一个合适的版本进行安装：
+
+```
+mamba install gcc=11.2.0 gxx=11.2.0 make cmake
+```
+
+安装完成之后激活环境，相关的环境变量也会设置好
