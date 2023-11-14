@@ -106,6 +106,10 @@ rclone copy source dest --progress --transfers=16 --multi-thread-streams=4
  - `--transfers`表示同时传输的文件的数量，默认是4。
  - `--multi-thread-streams`表示下载文件时使用的线程数量，默认是4。
 
+## rclone 通过SFTP复制出现`Failed to copy: Update SetModTime failed`
+
+增加选项`--sftp-set-modtime=false`即可
+
 ## rclone 怎么使用S3存储
 
 修改配置文件`~/.config/rclone/rclone.conf`
