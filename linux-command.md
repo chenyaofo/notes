@@ -110,6 +110,20 @@ rclone copy source dest --progress --transfers=16 --multi-thread-streams=4
 
 增加选项`--sftp-set-modtime=false`即可
 
+## rclone 怎么复制文件夹
+
+例如要将本目录下面的`datasets`文件夹复制到远程的`/home`目录下面，那么下面这样是不行的
+
+```
+rclone copy datasets remote:/home
+```
+
+上面的命令会将`datasets`里面的文件和文件夹全部复制到`/home`目录下面，正确的做法应该是：
+
+```
+rclone copy datasets remote:/home/datasets
+```
+
 ## rclone 怎么使用S3存储
 
 修改配置文件`~/.config/rclone/rclone.conf`
