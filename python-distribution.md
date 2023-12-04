@@ -143,7 +143,7 @@ python3 -m pip install -e SomeProject @ git+https://git.repo/some_pkg.git       
 python3 -m pip install -e SomeProject @ hg+https://hg.repo/some_pkg                # from mercurial
 python3 -m pip install -e SomeProject @ svn+svn://svn.repo/some_pkg/trunk/         # from svn
 python3 -m pip install -e SomeProject @ git+https://git.repo/some_pkg.git@feature  # from a branch
-python3 -m pip install -e "git+https://git.repo/some_pkg.git@feature#egg=common&subdirectory=src" # from a branch and subfolder
+python3 -m pip install -e "git+https://git.repo/some_pkg.git@feature#subdirectory=src" # from a branch and subfolder
 ```
 
 - Installing from a local src tree
