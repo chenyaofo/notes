@@ -36,3 +36,80 @@ alias p5="http_proxy=socks5://${proxyip}:${port} https_proxy=socks5://${proxyip}
 alias pq="proxychains4 -q"
 ```
 
+
+## 使用Clash Verge给机场再套个Cloudflare Warp
+
+```
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    nameserver: [223.5.5.5, 223.6.6.6]
+
+proxy-providers:
+  JiChang:   #名称，默认即可
+    type: http
+    url: "xxx"  ###此处必填，url里面填入你的机场订阅链接，一般订阅链接加密了，需要转换为直链(https://acl4ssr-sub.github.io/，进阶模式，选择输出为Node List)
+    interval: 3600
+    path: ./JiChang.yaml   #机场订阅文件下载后的文件名及文件地址，默认即可
+    health-check:
+      enable: true
+      interval: 600
+      url: https://www.gstatic.com/generate_204
+
+proxies:
+  - name: WARP
+    type: wireguard
+    server: engage.cloudflareclient.com
+    port: 2408
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:85a2:2aae:7478:ef9f:4c94
+    private-key: #请到Telegram中的Warp Plus Bot获取
+    public-key: #请到Telegram中的Warp Plus Bot获取
+    udp: true
+    reserved: [0,0,0]
+    remote-dns-resolve: true  
+    dns: [ 1.1.1.1, 8.8.8.8 ]
+    dialer-proxy: "前置节点"
+
+proxy-groups:
+  # 这个名字为前置节点的策略组可以选择是用自建节点还是机场节点作为前置节点
+
+  - name: 节点选择
+    type: select
+    proxies:
+      - WARP        #给机场套warp之后的节点     
+      - 机场自动选择    
+      - 机场手动选择
+
+  - name: 前置节点
+    type: select
+    proxies:  
+      - 机场自动选择    
+      - 机场手动选择
+
+  - name: 机场自动选择
+    type: url-test #选出延迟最低的机场节点
+    use:
+      - JiChang    #proxy-providers中的名字，默认即可
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+
+  - name: 机场手动选择
+    type: select #手动选择
+    use:
+      - JiChang
+
+rules:
+    - GEOIP,LAN,DIRECT
+    - GEOIP,lan,DIRECT,no-resolve
+    # 默认规则
+    - MATCH,节点选择
+```
