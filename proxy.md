@@ -118,12 +118,12 @@ rules:
 
 工具地址：https://github.com/RubyMetric/chsrc
 
-下载安装：curl -L https://gitee.com/RubyMetric/chsrc/releases/download/pre/chsrc-x64-linux -o chsrc; chmod +x ./chsrc
+下载安装：`curl -L https://gitee.com/RubyMetric/chsrc/releases/download/pre/chsrc-x64-linux -o chsrc; chmod +x ./chsrc`
 
 支持的镜像站、软件可通过`./chsrc l`查看，目前对我来说支持的源包括：pip, python, pypi, pdm, npm, node, go, golang；ubuntu, debian；docker, dockerhub, conda。
 
 下面命令可以直接设置`pip`源：`./chsrc set pip`，下面命令仅测速但不设置`pip`源：`./chsrc cesu pip`。
 
-如果不像测速，下面命令可以直接设置预定义中最快的`pip`源：`./chsrc set pip first`。
+如果不想测速，下面命令可以直接设置预定义中最快的`pip`源：`./chsrc set pip first`。
 
 如果想手动换源，先运行`./chsrc list pip`选择找到源的代号（code），然后`./chsrc set pip <code>`即可。
