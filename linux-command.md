@@ -139,3 +139,9 @@ acl = private
 ```
 
 然后即可愉快使用了`rclone tree r2:`，其它rclone命令同理。
+
+## 怎么清理显卡上的所有进程
+
+```
+fuser -v /dev/nvidia* | awk '{for(i=1;i<=NF;i++)print "kill -9 " $i;}' | sh
+```
