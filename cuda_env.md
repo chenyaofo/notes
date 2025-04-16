@@ -55,7 +55,7 @@ conda install gcc=13 gxx=13 -c conda-forge
 
 ## 如何安装FlashAttention？
 
-通过编译安装：
+通过编译安装（编译可能需要数个小时）：
 
 ```
 pip install packaging
@@ -63,7 +63,7 @@ pip install ninja
 pip install flash-attn --no-build-isolation
 ```
 
-通过prebuilt二进制包安装：
+还有一种方式是通过prebuilt二进制包安装：
 
 在 https://github.com/Dao-AILab/flash-attention/releases 找自己合适的版本：
 
