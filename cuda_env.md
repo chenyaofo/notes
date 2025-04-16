@@ -47,7 +47,6 @@ conda install nvidia/label/cuda-12.8.1::cuda
 
 ## 如何安装GCC和G++？
 
-上述安装的cuda没有安装gcc编译器，可通过下述命令安装
 
 ```
 conda install gcc=13 gxx=13 -c conda-forge
