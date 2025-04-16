@@ -79,7 +79,7 @@ python -c "import torch; print(torch.__version__)"
 python -c "import torch; print(torch._C._GLIBCXX_USE_CXX11_ABI)"
 ```
 
-然后确定自己的python版本和cuda版本，根据这些信息在release中挑选合适的whl包，复制链接然后安装：
+然后确定自己的python版本和cuda版本，根据这些信息在release中挑选合适的whl包，复制链接然后安装，比如：
 
 ```
 pip install https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.2cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
