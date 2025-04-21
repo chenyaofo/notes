@@ -7,42 +7,42 @@
 这样安装的cuda是完整的，带nvcc的。
 
 ```
-conda install nvidia/label/cuda-11.3.0::cuda
-conda install nvidia/label/cuda-11.3.1::cuda
-conda install nvidia/label/cuda-11.4.0::cuda
-conda install nvidia/label/cuda-11.4.1::cuda
-conda install nvidia/label/cuda-11.4.2::cuda
-conda install nvidia/label/cuda-11.4.3::cuda
-conda install nvidia/label/cuda-11.4.4::cuda
-conda install nvidia/label/cuda-11.5.0::cuda
-conda install nvidia/label/cuda-11.5.1::cuda
-conda install nvidia/label/cuda-11.5.2::cuda
-conda install nvidia/label/cuda-11.6.0::cuda
-conda install nvidia/label/cuda-11.6.1::cuda
-conda install nvidia/label/cuda-11.6.2::cuda
-conda install nvidia/label/cuda-11.7.0::cuda
-conda install nvidia/label/cuda-11.7.1::cuda
-conda install nvidia/label/cuda-11.8.0::cuda
-conda install nvidia/label/cuda-12.0.0::cuda
-conda install nvidia/label/cuda-12.0.1::cuda
-conda install nvidia/label/cuda-12.1.0::cuda
-conda install nvidia/label/cuda-12.1.1::cuda
-conda install nvidia/label/cuda-12.2.0::cuda
-conda install nvidia/label/cuda-12.2.1::cuda
-conda install nvidia/label/cuda-12.2.2::cuda
-conda install nvidia/label/cuda-12.3.0::cuda
-conda install nvidia/label/cuda-12.3.1::cuda
-conda install nvidia/label/cuda-12.3.2::cuda
-conda install nvidia/label/cuda-12.4.0::cuda
-conda install nvidia/label/cuda-12.4.1::cuda
-conda install nvidia/label/cuda-12.5.0::cuda
-conda install nvidia/label/cuda-12.5.1::cuda
-conda install nvidia/label/cuda-12.6.0::cuda
-conda install nvidia/label/cuda-12.6.1::cuda
-conda install nvidia/label/cuda-12.6.2::cuda
-conda install nvidia/label/cuda-12.6.3::cuda
-conda install nvidia/label/cuda-12.8.0::cuda
-conda install nvidia/label/cuda-12.8.1::cuda
+conda install -y cuda -c nvidia/label/cuda-11.3.0
+conda install -y cuda -c nvidia/label/cuda-11.3.1
+conda install -y cuda -c nvidia/label/cuda-11.4.0
+conda install -y cuda -c nvidia/label/cuda-11.4.1
+conda install -y cuda -c nvidia/label/cuda-11.4.2
+conda install -y cuda -c nvidia/label/cuda-11.4.3
+conda install -y cuda -c nvidia/label/cuda-11.4.4
+conda install -y cuda -c nvidia/label/cuda-11.5.0
+conda install -y cuda -c nvidia/label/cuda-11.5.1
+conda install -y cuda -c nvidia/label/cuda-11.5.2
+conda install -y cuda -c nvidia/label/cuda-11.6.0
+conda install -y cuda -c nvidia/label/cuda-11.6.1
+conda install -y cuda -c nvidia/label/cuda-11.6.2
+conda install -y cuda -c nvidia/label/cuda-11.7.0
+conda install -y cuda -c nvidia/label/cuda-11.7.1
+conda install -y cuda -c nvidia/label/cuda-11.8.0
+conda install -y cuda -c nvidia/label/cuda-12.0.0
+conda install -y cuda -c nvidia/label/cuda-12.0.1
+conda install -y cuda -c nvidia/label/cuda-12.1.0
+conda install -y cuda -c nvidia/label/cuda-12.1.1
+conda install -y cuda -c nvidia/label/cuda-12.2.0
+conda install -y cuda -c nvidia/label/cuda-12.2.1
+conda install -y cuda -c nvidia/label/cuda-12.2.2
+conda install -y cuda -c nvidia/label/cuda-12.3.0
+conda install -y cuda -c nvidia/label/cuda-12.3.1
+conda install -y cuda -c nvidia/label/cuda-12.3.2
+conda install -y cuda -c nvidia/label/cuda-12.4.0
+conda install -y cuda -c nvidia/label/cuda-12.4.1
+conda install -y cuda -c nvidia/label/cuda-12.5.0
+conda install -y cuda -c nvidia/label/cuda-12.5.1
+conda install -y cuda -c nvidia/label/cuda-12.6.0
+conda install -y cuda -c nvidia/label/cuda-12.6.1
+conda install -y cuda -c nvidia/label/cuda-12.6.2
+conda install -y cuda -c nvidia/label/cuda-12.6.3
+conda install -y cuda -c nvidia/label/cuda-12.8.0
+conda install -y cuda -c nvidia/label/cuda-12.8.1
 ```
 
 ## 如何安装GCC和G++？
