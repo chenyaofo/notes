@@ -96,6 +96,10 @@ find命令配合使用exec和xargs可以使用户对所匹配到的文件执行�
 
 ---
 
+## rclone 怎么配置SFTP
+
+需要配置`ip+port+username+key`，keyfile直接填写私钥路径即可。
+
 ## rclone 命令多线程复制
 
 ```
