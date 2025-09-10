@@ -2,6 +2,8 @@
 
 https://refuel.exchange/
 
+https://smolrefuel.com/
+
 ## USDC CCTP
 
 https://portalbridge.com/usdc-bridge
