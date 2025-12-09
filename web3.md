@@ -21,3 +21,9 @@ https://app.debridge.finance
 ## SWAP
 
 https://swap.defillama.com
+
+## XSGD->PYUSD
+
+`XSGD (Polygon)` -> https://swap.defillama.com ->
+`USDC (Polygon)` -> https://stargate.finance ->
+`USDC (Solana)` -> https://jup.ag -> `PYUSD (Solana)`
